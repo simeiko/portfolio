@@ -1,0 +1,428 @@
+header, main, section, nav {display:block;}
+
+/* GENERAL CSS */
+
+body, html
+{
+    margin: 0;
+    padding: 0;
+    font: 100%/1.4 'Open Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header h1,
+#header-nav,
+footer
+{
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+/* HEADER */
+
+header
+{
+    flex: 0 0 auto;
+}
+
+#header
+{
+    display: flex;
+    background: #2c3e50;
+    height: 50px;
+    align-items: center;
+}
+
+header h1
+{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font: 150% 'Open Sans Light', Arial, sans-serif;
+    flex: 1 0 auto;
+    text-align: center;
+}
+
+/* HEADER: Navigation Menu */
+
+#menu-icon
+{
+    color: #fff;
+    display: block;
+    font-size: 150%;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    transition: background 0.2s;
+}
+
+#menu-icon:hover
+{
+    transition: background 0.2s;
+    background: #5F7183;
+}
+
+#header-nav
+{
+    display: none;
+    font-family: 'Open Sans Light', Arial, sans-serif;
+    font-size: 110%;
+    background: #34495e;
+}
+
+#header-nav a
+{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 8px 20px;
+}
+
+.selected:before
+{
+    content: '> ';
+}
+
+#header-nav a:hover:before
+{
+    content: '> ';
+}
+
+/* MAIN */
+
+main
+{
+    flex: 1 0 auto;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main h2
+{
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+main p a
+{
+    color: #16a085;
+    text-decoration: none;
+    display: inline-block;
+}
+
+main p a:after
+{
+    display: block;
+    content: '';
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    border-bottom: 2px solid #16a085;
+}
+
+main p a:hover:after
+{
+    transform: scaleX(1);
+}
+
+/* MAIN: Portfolio */
+
+#portfolio
+{
+    flex-direction: column;
+    padding: 25px 0;
+}
+
+#portfolio .section
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#portfolio .section:nth-child(n+4)
+{
+    display: none;
+}
+
+#portfolio img
+{
+    display: block;
+    margin-bottom: 4px;
+}
+
+.no-image
+{
+    width: 200px;
+    height: 200px;
+    background: #bdc3c7;
+    border-radius: 50%;
+    margin-bottom: 4px;
+}
+
+#portfolio span,
+#portfolio a
+{
+    font-size: 110%;
+}
+
+#portfolio a
+{
+    color: #000;
+    text-decoration: none;
+}
+
+#portfolio a:hover
+{
+    text-decoration: underline;
+}
+
+/* FOOTER */
+
+footer
+{
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+footer span
+{
+    cursor: default;
+    font: 125% 'Open Sans Light';
+    color: #2c3e50;
+}
+
+footer nav,
+footer nav li
+{
+    display: inline-block;
+    flex: 0 0 auto;
+}
+
+/* FOOTER: onclick animation */
+
+@keyframes shake
+{
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-25px); }
+    50% { transform: translateY(-10px); }
+    75% { transform: translateY(-25px); }
+    100% { transform: translateY(0); }
+}
+
+/* FOOTER: Social Media Links */
+
+footer nav a
+{
+    color: #2c3e50;
+    display: block;
+    margin: 0 5px;
+    padding: 0 5px;
+    font-size: 125%;
+    outline: none;
+    box-sizing: border-box;
+    transition: color 0.2s;
+}
+
+footer nav a:hover
+{
+    transition: color 0.2s;
+    color: #5F7183;
+}
+
+/* MEDIA FOR MOBILE DEVICES */
+
+@media screen and (min-width: 320px)
+{
+    /* FOOTER */
+
+    footer span,
+    footer nav a
+    {
+        font-size: 170%;
+    }
+}
+
+@media screen and (min-width: 480px)
+{
+    /* FOOTER */
+
+    footer span,
+    footer nav a
+    {
+        font-size: 250%;
+    }
+}
+
+@media screen and (min-width: 640px)
+{
+    /* MAIN */
+
+    main
+    {
+        width: 80%;
+    }
+
+    /* MAIN: Portfolio */
+
+    #portfolio
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    #portfolio .section:nth-child(n+4)
+    {
+        display: block;
+    }
+
+    /* HEADER */
+
+    #header
+    {
+        display: none;
+    }
+
+    /* HEADER: Navigation Menu */
+
+    #header-nav
+    {
+        margin: 25px 25px 0 0;
+        display: block !important;
+        background: none;
+        text-align: right;
+    }
+
+    #header-nav li
+    {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    #header-nav li:after
+    {
+        display: block;
+        content: '';
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+
+    #header-nav li:hover:after
+    {
+        transform: scaleX(1);
+    }
+
+    #header-nav li:nth-child(odd):after
+    {
+        border-bottom: 2px solid #9b59b6;
+    }
+
+    #header-nav li:nth-child(even):after
+    {
+        border-bottom: 2px solid #3498db;
+    }
+
+    #header-nav li:hover
+    {
+        font-weight: bold;
+    }
+
+    #header-nav a
+    {
+        color: #757575;
+        display: block;
+        padding: 0;
+    }
+
+    .selected:before,
+    #header-nav a:hover:before
+    {
+        content: none;
+    }
+
+    /* FOOTER */
+
+    footer span,
+    footer nav a
+    {
+        font-size: 300%;
+    }
+}
+
+/* MEDIA FOR TABLETS */
+
+@media screen and (min-width: 768px)
+{
+    /* FOOTER */
+
+    footer span,
+    footer nav a
+    {
+        font-size: 350%;
+    }
+}
+
+/* MEDIA FOR LAPTOPS & DESKTOPS */
+
+@media screen and (min-width: 850px)
+{
+    /* MAIN */
+
+    main
+    {
+        width: 800px;
+        font-size: 115%;
+    }
+
+    /* MAIN: Portfolio */
+
+    #portfolio .section
+    {
+        margin-right: 100px;
+    }
+
+    #portfolio .section:nth-child(3n)
+    {
+        margin-right: 0;
+    }
+
+    /* HEADER: Navigation Menu */
+
+    #header-nav
+    {
+        font-size: 115%;
+    }
+
+    /* FOOTER */
+
+    footer span,
+    footer nav a
+    {
+        font-size: 350%;
+    }
+}
+
+@media screen and (min-width: 1024px)
+{
+    /* HEADER: Navigation Menu */
+
+    #header-nav
+    {
+        font-size: 125%;
+    }
+}
