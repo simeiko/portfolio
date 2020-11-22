@@ -1,2 +1,3 @@
-# simeiko.pro
-Simple portfolio website with minimal use of HTML, CSS, and JS.
+# Portfolio website - https://simeiko.pro
+
+Minimalistic UI design.
